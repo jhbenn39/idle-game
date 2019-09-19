@@ -1,20 +1,37 @@
 var score = 1; // Create a variable to store the score in
 
-var title = new Title('Welcome to the Game'); // Create a title element
-var button = new Button('hello', btnPress);   // Create a button element
-var scr = new Text(score);                    // Create a text element
+var title1 = new Title('Dont touch the button'); // Create a title element
+var button = new Button('Button', btnPress);   // Create a button element
+                 // Create a text element
 
-createButton('Button', btnPress);
+
 changeTitle('Clicker Game');
 
-
-
 function btnPress() {
-  score++;         // Increase the score
-  scr.edit(score); // Update the page with the new score
+  score++; 
+  if (score == 2){
+    title1.hide();
+    button.hide();
+    var title2 = new Title("Dont touch the butt");
+    var button1 = new Button('Butt', btn1Press);
+  }
+}
+function btn1Press() {
+  score++;
+  if (score == 3){
+    title2.hide();
+    var title3 = new Title("Why you touch ma butt");
+  }
 }
 function btn2Press() {
-  score += 2;
-  postToPage(score);
+  score++;
+  if (score == 4){
+    title3.hide();
+    button1.hide();
+    var title4 = new Title("This is sexual harrasment im calling the po po");
+    var button2 = new Button("No don't call the po po", btn2Press);
+  }
 }
-createButton('Butt', btn2Press);
+
+
+
