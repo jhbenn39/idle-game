@@ -18,6 +18,10 @@ function createButton(message, script) {
 function changeTitle(text) {
   let title = document.getElementById('title');
   title.innerHTML = text;
+  let title1 = document.getElementById('title');
+  title1.innerHTML = text;
+  let title2 = document.getElementById('title');
+  title2.innerHTML = text;
 }
 
 function createText(text, id, parentId) {
