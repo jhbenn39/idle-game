@@ -10,53 +10,76 @@ var scr8 = 0;
 var scr9 = 0;
 var scr10 = 0;
 var scr11 = 0;
-
-
+var scr12 = 0;
+var scr13 = 0;
+var scr14 = 0;
 
 var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
 var text = new Text('Get some stone to start your journey');
-var text1 = new Text('Great! Now you should grab some sticks to make a stone pickaxe');
-var text2 = new Text('Now you can get stone more quickly');
-var text3 = new Text('You can now make a smelter');
-var text4 = new Text('Upgrade your smelter to smelt your iron faster');
-var text5 = new Text('Make a stone axe to get wood for your smelter');
-var text6 = new Text('You can now find iron but you cant smelt it into anything');
-var text7 = new Text("You find some clay but you can't get it because you need a shovel to get it");
-var text8 = new Text('Make a stone shovel');
-var text9 = new Text('You can now get clay');
-var text10 = new Text('You can now make iron tools to get materials efficiently');
+let text1 = new Text('Great! Now you should grab some sticks to make a stone pickaxe');
+let text2 = new Text('Now you can get stone more quickly');
+let text3 = new Text('Once you have enough stone, make a smelter');
+let text4 = new Text('Make a stone axe to get wood for your smelter');
+let text5 = new Text('You can now find iron but you cant smelt it into anything');
+let text6 = new Text("You find some clay but you can't get it because you need a shovel to get it");
+let text7 = new Text('Make a stone shovel');
+let text8 = new Text('You can now get clay');
+let text9 = new Text('You can now make iron tools to get materials efficiently');
+let text10 = new Text('If you have enough iron, create an oil mine')
+let text11 = new Text('You can now make plastic')
+let text12 = new Text('If you have enough plastic and iron you can make a computer')
 
+if (scr == 10){
+  text1.show();
+  button1.show();
+  button2.show();
+  mat1.show();
+  mat2.show();
+}
 
+if (scr2 == 1){
+  text2.show();
+  text3.show();
+  button2.hide();
+  mat2.hide();
+}
 
-var button = new Button('Stone',btnprs);
-var button1 = new Button('Sticks',btn1prs);
-var button2 = new Button('Stone Pickaxe',btn2prs);
-var button3 = new Button('Smelter',btn3prs);
-var button4 = new Button('Stone axe',btn4prs);
-var button5 = new Button('Wood',btn5prs);
-var button6 = new Button('Stone shovel',btn6prs);
-var button7 = new Button('Clay',btn7prs);
-var button8 = new Button('Iron',btn8prs);
-var button9 = new Button('Iron pickaxe',btn9prs);
-var button10 = new Button('Iron axe',btn10prs);
-var button11 = new Button('Iron shovel',btn11prs);
-
-
+var buttona = new Button('Stone',btnaprs);
+let buttonb = new Button('Stone',btnbprs);
+let buttonc = new Button('Stone',btncprs);
+let button1 = new Button('Sticks',btn1prs);
+let button2 = new Button('Stone Pickaxe',btn2prs);
+let button3 = new Button('Smelter',btn3prs);
+let button4 = new Button('Stone Axe',btn4prs);
+let button5a = new Button('Wood',btn5aprs);
+let button5b = new Button('Wood',btn5bprs);
+let button6 = new Button('Stone Shovel',btn6prs);
+let button7a = new Button('Clay',btn7aprs);
+let button7b = new Button('Clay',btn7bprs);
+let button8a = new Button('Iron',btn8aprs);
+let button8b = new Button('Iron',btn8bprs);
+let button9 = new Button('Iron Pickaxe',btn9prs);
+let button10 = new Button('Iron Axe',btn10prs);
+let button11 = new Button('Iron Shovel',btn11prs);
+let button12 = new Button('Oil Mine',btn12prs)
+let button13 = new Button('Plastic',btn13prs)
+let button14 = new Button('Computer',btn14prs)
 
 var mat = new Text('Stone = ' + scr);
-var mat1 = new Text('Sticks = ' + scr1);
-var mat2 = new Text('Stone Pickaxe = 40 Stone + 20 Sticks');
-var mat3 = new Text('Smelter upgrades = ' + scr3);
-var mat4 = new Text('Stone Axe = ' + scr4);
-var mat5 = new Text('Wood = ' + scr5);
-var mat6 = new Text('Stone Shovel = ' + scr6);
-var mat7 = new Text('Clay = ' + scr7);
-var mat8 = new Text('Iron = ' + scr8);
-var mat9 = new Text('Pickaxe upgrade = ' + scr2);
-var mat10 = new Text('Axe upgrade = ' + scr4);
-var mat11 = new Text('Shovel upgrade = ' + scr6);
-
-
+let mat1 = new Text('Sticks = ' + scr1);
+let mat2 = new Text('Stone Pickaxe = 30 Stone + 20 Sticks');
+let mat3 = new Text('Smelter = 100 Stone');
+let mat4 = new Text('Stone Axe = 60 Stone + 40 Sticks');
+let mat5 = new Text('Wood = '+ scr5);
+let mat6 = new Text('Stone Shovel = 60 Stone + 50 Wood');
+let mat7 = new Text('Clay = ' + scr7);
+let mat8 = new Text('Iron = ' + scr8);
+let mat9 = new Text('Pickaxe Upgrade = 200 Iron + 100 Wood');
+let mat10 = new Text('Axe Upgrade = 200 Iron + 100 Wood');
+let mat11 = new Text('Shovel Upgrade = 200 Iron + 100 Wood');
+let mat12 = new Text('Oil Mine = 1000 Iron')
+let mat13 = new Text('Plastic = '+ scr13)
+let mat14 = new Text('Computer = 10000 iron + 10000 Plastic')
 
 var rowSection = new Section('row');
   var txt1 = new Section('col');
@@ -77,19 +100,29 @@ var rowSection = new Section('row');
       txt1.add(text8);
       txt1.add(text9);
       txt1.add(text10);
+      txt1.add(text11);
+      txt1.add(text12)
       
-      btns1.add(button);
+      btns1.add(buttona);
+      btns1.add(buttonb);
+      btns1.add(buttonc);
       btns1.add(button1);
       btns1.add(button2);
       btns1.add(button3);
       btns1.add(button4);
-      btns1.add(button5);
+      btns1.add(button5a);
+      btns1.add(button5b);
       btns1.add(button6);
-      btns1.add(button7);
-      btns1.add(button8);
+      btns1.add(button7a);
+      btns1.add(button7b);
+      btns1.add(button8a);
+      btns1.add(button8b);
       btns1.add(button9);
       btns1.add(button10);
       btns1.add(button11);
+      btns1.add(button12);
+      btns1.add(button13);
+      btns1.add(button14);
       
       mats1.add(mat);
       mats1.add(mat1);
@@ -103,9 +136,21 @@ var rowSection = new Section('row');
       mats1.add(mat9);
       mats1.add(mat10);
       mats1.add(mat11);
+      mats1.add(mat12);
+      mats1.add(mat13);
+      mats1.add(mat14);
 
-function btnprs(){
+function btnaprs(){
   scr ++;
+  text1.show()
+  mat.edit('Stone = ' + scr);
+}
+function btnbprs(){
+  scr += 2;
+  mat.edit('Stone = ' + scr);
+}
+function btncprs(){
+  scr += 4;
   mat.edit('Stone = ' + scr);
 }
 function btn1prs(){
@@ -113,8 +158,8 @@ function btn1prs(){
   mat1.edit('Sticks = ' + scr1);
 }
 function btn2prs(){
-  scr2 ++;
-  mat2.hide();
+scr2 ++;
+  if (scr == 30 && scr1 == 20 && )
 }
 function btn3prs(){
   scr3 ++;
@@ -128,16 +173,28 @@ function btn5prs(){
   scr5 ++;
   mat5.edit('Wood = ' + scr5);
 }
+function btn5prs(){
+  scr5 =+ 2;
+  mat5.edit('Wood = ' + scr5);
+}
 function btn6prs(){
   scr6 ++;
   mat6.hide();
 }
-function btn7prs(){
+function btn7aprs(){
   scr7 ++;
   mat7.edit('Clay = ' + scr7);
 }
-function btn8prs(){
+function btn7bprs(){
+  scr7 += 2;
+  mat7.edit('Clay = ' + scr7);
+}
+function btn8aprs(){
   scr8 ++;
+  mat8.edit('Iron = ' + scr8);
+}
+function btn8bprs(){
+  scr8 += 4;
   mat8.edit('Iron = ' + scr8);
 }
 function btn9prs(){
@@ -150,5 +207,17 @@ function btn10prs(){
 }
 function btn11prs(){
   scr11 ++;
+  mat11.hide();
+}
+function btn12prs(){
+  scr12 ++;
+  mat11.hide();
+}
+function btn13prs(){
+  scr13 ++;
+  mat11.hide();
+}
+function btn14prs(){
+  scr14 ++;
   mat11.hide();
 }
