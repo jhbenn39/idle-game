@@ -36,12 +36,33 @@ if (scr == 10){
   mat1.show();
   mat2.show();
 }
-
-if (scr2 == 1){
+if (scr == 30 && scr1 == 20 && button2 == down){
+  buttona.remove();
+  buttonb.show();
+  button2.remove();
+  scr -= 30;
+  scr1 -=20;
   text2.show();
   text3.show();
+  mat3.show();
   button2.hide();
   mat2.hide();
+}
+
+if (scr == 100 && button3 == down){
+  text4.show();
+  mat4.show();
+  mat3.remove();
+  button3.remove();
+  scr -= 100;
+}
+if (scr == 60 && scr1 == 40 && button4 == down){
+  text5.show();
+  text6.show();
+  button5a.show();
+  button4.remove();
+  mat4.remove()
+  mat5.show();  
 }
 
 var buttona = new Button('Stone',btnaprs);
@@ -159,11 +180,10 @@ function btn1prs(){
 }
 function btn2prs(){
 scr2 ++;
-  if (scr == 30 && scr1 == 20 && )
+
 }
 function btn3prs(){
   scr3 ++;
-  mat3.edit('Smelter upgrades = ' + scr3);
 }
 function btn4prs(){
   scr4 ++;
