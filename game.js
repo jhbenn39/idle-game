@@ -13,7 +13,7 @@ var scr11 = 0;
 
 
 
-var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people.');
+var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
 var text = new Text('Get some stone to start your journey');
 var text1 = new Text('Great! Now you should grab some sticks to make a stone pickaxe');
 var text2 = new Text('Now you can get stone more quickly');
@@ -58,50 +58,51 @@ var mat11 = new Text('Shovel upgrade = ' + scr6);
 
 
 
-var rowSection = new Section();
-  var txt = new Section();
-  var btns = new Section();
-  var mats = new Section();
-    rowSection.add(txt);
-    rowSection.add(btns);
-    rowSection.add(mats);
-      txt.add(text);
-      txt.add(text1);
-      txt.add(text2);
-      txt.add(text3);
-      txt.add(text4);
-      txt.add(text5);
-      txt.add(text6);
-      txt.add(text7);
-      txt.add(text8);
-      txt.add(text9);
-      txt.add(text10);
+var rowSection = new Section('row');
+  var txt1 = new Section('col');
+  var btns1 = new Section('col');
+  var mats1 = new Section('col');
+    rowSection.add(txt1);
+    rowSection.add(btns1);
+    rowSection.add(mats1);
+      txt1.add(beginning);
+      txt1.add(text);
+      txt1.add(text1);
+      txt1.add(text2);
+      txt1.add(text3);
+      txt1.add(text4);
+      txt1.add(text5);
+      txt1.add(text6);
+      txt1.add(text7);
+      txt1.add(text8);
+      txt1.add(text9);
+      txt1.add(text10);
       
-      btns.add(button);
-      btns.add(button1);
-      btns.add(button2);
-      btns.add(button3);
-      btns.add(button4);
-      btns.add(button5);
-      btns.add(button6);
-      btns.add(button7);
-      btns.add(button8);
-      btns.add(button9);
-      btns.add(button10);
-      btns.add(button11);
+      btns1.add(button);
+      btns1.add(button1);
+      btns1.add(button2);
+      btns1.add(button3);
+      btns1.add(button4);
+      btns1.add(button5);
+      btns1.add(button6);
+      btns1.add(button7);
+      btns1.add(button8);
+      btns1.add(button9);
+      btns1.add(button10);
+      btns1.add(button11);
       
-      mats.add(mat);
-      mats.add(mat1);
-      mats.add(mat2);
-      mats.add(mat3);
-      mats.add(mat4);
-      mats.add(mat5);
-      mats.add(mat6);
-      mats.add(mat7);
-      mats.add(mat8);
-      mats.add(mat9);
-      mats.add(mat10);
-      mats.add(mat11);
+      mats1.add(mat);
+      mats1.add(mat1);
+      mats1.add(mat2);
+      mats1.add(mat3);
+      mats1.add(mat4);
+      mats1.add(mat5);
+      mats1.add(mat6);
+      mats1.add(mat7);
+      mats1.add(mat8);
+      mats1.add(mat9);
+      mats1.add(mat10);
+      mats1.add(mat11);
 
 function btnprs(){
   scr ++;
