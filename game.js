@@ -14,40 +14,10 @@ var scr12 = 0;
 var scr13 = 0;
 var scr14 = 0;
 
-if (scr == 10){
-  text1.show();
-  button1.show();
-  button2.show();
-  mat1.show();
-  mat2.show();
-}
-if (scr == 30 && scr1 == 20 && button2.down();){
-  buttona.remove();
-  buttonb.show();
-  button2.remove();
-  scr -= 30;
-  scr1 -=20;
-  text2.show();
-  text3.show();
-  mat3.show();
-  mat2.hide();
-}
 
-if (scr == 100 && button3.down();){
-  text4.show();
-  mat4.show();
-  mat3.remove();
-  button3.remove();
-  scr -= 100;
-}
-if (scr == 60 && scr1 == 40 && button4.down();){
-  text5.show();
-  text6.show();
-  button5a.show();
-  button4.remove();
-  mat4.remove()
-  mat5.show();
-}
+
+
+
 
 
 var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
@@ -211,8 +181,14 @@ var rowSection = new Section('row');
 
 function btnaprs(){
   scr ++;
-  text1.show()
   mat.edit('Stone = ' + scr);
+  if (scr == 10){
+    text1.show();
+    button1.show();
+    button2.show();
+    mat1.show();
+    mat2.show();
+  }
 }
 function btnbprs(){
   scr += 2;
@@ -227,27 +203,59 @@ function btn1prs(){
   mat1.edit('Sticks = ' + scr1);
 }
 function btn2prs(){
-scr2 ++;
-
+  if (scr == 30 && scr1 == 20 && button2.down();){
+    scr2 ++;
+  }
+  if (scr2 == 1){
+    buttona.remove();
+    buttonb.show();
+    button2.remove();
+    scr -= 30;
+    scr1 -=20;
+    text2.show();
+    text3.show();
+    mat3.show();
+    mat2.hide();
+  }
 }
 function btn3prs(){
-  scr3 ++;
+  if (scr == 100 && button3.down();){
+    scr3 ++;
+  }
+  if (scr3 == 1){
+    text4.show();
+    mat4.show();
+    mat3.remove();
+    button3.remove();
+    scr -= 100;
+  }
 }
 function btn4prs(){
-  scr4 ++;
-  mat4.hide();
+  if (scr == 60 && scr1 == 40 && button4.down();){
+    scr4 ++;
+  }
+  if (scr4 == 1){
+    text5.show();
+    text6.show();
+    button5a.show();
+    button4.remove();
+    mat4.remove()
+    mat5.show();
+    text7.show();
+  }
 }
 function btn5aprs(){
-  scr5 ++;
+  scr5 ++4;
   mat5.edit('Wood = ' + scr5);
 }
 function btn5bprs(){
-  scr5 =+ 2;
+  scr5 =+ 8;
   mat5.edit('Wood = ' + scr5);
 }
 function btn6prs(){
-  scr6 ++;
-  mat6.hide();
+  if (scr == 60 && scr == 50 && button6.down();){
+    scr6 ++;
+  }
 }
 function btn7aprs(){
   scr7 ++;
