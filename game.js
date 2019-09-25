@@ -14,6 +14,42 @@ var scr12 = 0;
 var scr13 = 0;
 var scr14 = 0;
 
+if (scr == 10){
+  text1.show();
+  button1.show();
+  button2.show();
+  mat1.show();
+  mat2.show();
+}
+if (scr == 30 && scr1 == 20 && button2.down();){
+  buttona.remove();
+  buttonb.show();
+  button2.remove();
+  scr -= 30;
+  scr1 -=20;
+  text2.show();
+  text3.show();
+  mat3.show();
+  mat2.hide();
+}
+
+if (scr == 100 && button3.down();){
+  text4.show();
+  mat4.show();
+  mat3.remove();
+  button3.remove();
+  scr -= 100;
+}
+if (scr == 60 && scr1 == 40 && button4.down();){
+  text5.show();
+  text6.show();
+  button5a.show();
+  button4.remove();
+  mat4.remove()
+  mat5.show();
+}
+
+
 var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
 var text = new Text('Get some stone to start your journey');
 let text1 = new Text('Great! Now you should grab some sticks to make a stone pickaxe');
@@ -29,41 +65,18 @@ let text10 = new Text('If you have enough iron, create an oil mine')
 let text11 = new Text('You can now make plastic')
 let text12 = new Text('If you have enough plastic and iron you can make a computer')
 
-if (scr == 10){
-  text1.show();
-  button1.show();
-  button2.show();
-  mat1.show();
-  mat2.show();
-}
-if (scr == 30 && scr1 == 20 && button2 == down){
-  buttona.remove();
-  buttonb.show();
-  button2.remove();
-  scr -= 30;
-  scr1 -=20;
-  text2.show();
-  text3.show();
-  mat3.show();
-  button2.hide();
-  mat2.hide();
-}
-
-if (scr == 100 && button3 == down){
-  text4.show();
-  mat4.show();
-  mat3.remove();
-  button3.remove();
-  scr -= 100;
-}
-if (scr == 60 && scr1 == 40 && button4 == down){
-  text5.show();
-  text6.show();
-  button5a.show();
-  button4.remove();
-  mat4.remove()
-  mat5.show();  
-}
+text1.hide();
+text2.hide();
+text3.hide();
+text4.hide();
+text5.hide();
+text6.hide();
+text7.hide();
+text8.hide();
+text9.hide();
+text10.hide();
+text11.hide();
+text12.hide();
 
 var buttona = new Button('Stone',btnaprs);
 let buttonb = new Button('Stone',btnbprs);
@@ -86,6 +99,26 @@ let button12 = new Button('Oil Mine',btn12prs)
 let button13 = new Button('Plastic',btn13prs)
 let button14 = new Button('Computer',btn14prs)
 
+buttonb.hide();
+buttonc.hide();
+button1.hide();
+button2.hide();
+button3.hide();
+button4.hide();
+button5a.hide();
+button5b.hide();
+button6.hide();
+button7a.hide();
+button7b.hide();
+button8a.hide();
+button8b.hide();
+button9.hide();
+button10.hide();
+button11.hide();
+button12.hide();
+button13.hide();
+button14.hide();
+
 var mat = new Text('Stone = ' + scr);
 let mat1 = new Text('Sticks = ' + scr1);
 let mat2 = new Text('Stone Pickaxe = 30 Stone + 20 Sticks');
@@ -98,9 +131,24 @@ let mat8 = new Text('Iron = ' + scr8);
 let mat9 = new Text('Pickaxe Upgrade = 200 Iron + 100 Wood');
 let mat10 = new Text('Axe Upgrade = 200 Iron + 100 Wood');
 let mat11 = new Text('Shovel Upgrade = 200 Iron + 100 Wood');
-let mat12 = new Text('Oil Mine = 1000 Iron')
-let mat13 = new Text('Plastic = '+ scr13)
-let mat14 = new Text('Computer = 10000 iron + 10000 Plastic')
+let mat12 = new Text('Oil Mine = 1000 Iron');
+let mat13 = new Text('Plastic = '+ scr13);
+let mat14 = new Text('Computer = 10000 iron + 10000 Plastic');
+
+mat1.hide();
+mat2.hide();
+mat3.hide();
+mat4.hide();
+mat5.hide();
+mat6.hide();
+mat7.hide();
+mat8.hide();
+mat9.hide();
+mat10.hide();
+mat11.hide();
+mat12.hide();
+mat13.hide();
+mat14.hide();
 
 var rowSection = new Section('row');
   var txt1 = new Section('col');
@@ -123,7 +171,7 @@ var rowSection = new Section('row');
       txt1.add(text10);
       txt1.add(text11);
       txt1.add(text12)
-      
+
       btns1.add(buttona);
       btns1.add(buttonb);
       btns1.add(buttonc);
@@ -144,7 +192,7 @@ var rowSection = new Section('row');
       btns1.add(button12);
       btns1.add(button13);
       btns1.add(button14);
-      
+
       mats1.add(mat);
       mats1.add(mat1);
       mats1.add(mat2);
@@ -189,11 +237,11 @@ function btn4prs(){
   scr4 ++;
   mat4.hide();
 }
-function btn5prs(){
+function btn5aprs(){
   scr5 ++;
   mat5.edit('Wood = ' + scr5);
 }
-function btn5prs(){
+function btn5bprs(){
   scr5 =+ 2;
   mat5.edit('Wood = ' + scr5);
 }
