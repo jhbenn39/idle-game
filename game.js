@@ -26,10 +26,10 @@ let text7 = new Text('Make a stone shovel');
 let text8 = new Text('You can now get clay');
 let text9 = new Text('You can now make iron tools to get materials efficiently');
 let text10 = new Text('If you have enough iron, create an oil mine')
-let text11 = new Text('You can now make plastic')
-let text12 = new Text('If you have enough plastic and iron you can make a computer')
-var End = new Title('You Win!')
-var End2 = new Text('But you realized that it was all a dream haha you scrub')
+let text11 = new Text('You can now make plastic');
+let text12 = new Text('If you have enough plastic and iron you can make a computer');
+let end = new Title('You Win!');
+let end2 = new Text('But you realized that it was all a dream haha you scrub');
 
 text1.hide();
 text2.hide();
@@ -43,8 +43,8 @@ text9.hide();
 text10.hide();
 text11.hide();
 text12.hide();
-End.hide();
-End2.show();
+end.hide();
+end2.hide();
 
 var buttona = new Button('Stone',btnaprs);
 let buttonb = new Button('Stone',btnbprs);
@@ -56,8 +56,7 @@ let button4 = new Button('Stone Axe',btn4prs);
 let button5a = new Button('Wood',btn5aprs);
 let button5b = new Button('Wood',btn5bprs);
 let button6 = new Button('Stone Shovel',btn6prs);
-let button7a = new Button('Clay',btn7aprs);
-let button7b = new Button('Clay',btn7bprs);
+
 let button8a = new Button('Iron',btn8aprs);
 let button8b = new Button('Iron',btn8bprs);
 let button9 = new Button('Iron Pickaxe',btn9prs);
@@ -76,8 +75,8 @@ button4.hide();
 button5a.hide();
 button5b.hide();
 button6.hide();
-button7a.hide();
-button7b.hide();
+
+
 button8a.hide();
 button8b.hide();
 button9.hide();
@@ -94,7 +93,7 @@ let mat3 = new Text('Smelter = 100 Stone');
 let mat4 = new Text('Stone Axe = 60 Stone + 40 Sticks');
 let mat5 = new Text('Wood = '+ scr5);
 let mat6 = new Text('Stone Shovel = 60 Stone + 50 Wood');
-let mat7 = new Text('Clay = ' + scr7);
+
 let mat8 = new Text('Iron = ' + scr8);
 let mat9 = new Text('Pickaxe Upgrade = 200 Iron + 100 Wood');
 let mat10 = new Text('Axe Upgrade = 200 Iron + 100 Wood');
@@ -109,7 +108,7 @@ mat3.hide();
 mat4.hide();
 mat5.hide();
 mat6.hide();
-mat7.hide();
+
 mat8.hide();
 mat9.hide();
 mat10.hide();
@@ -150,8 +149,7 @@ var rowSection = new Section('row');
       btns1.add(button5a);
       btns1.add(button5b);
       btns1.add(button6);
-      btns1.add(button7a);
-      btns1.add(button7b);
+
       btns1.add(button8a);
       btns1.add(button8b);
       btns1.add(button9);
@@ -168,7 +166,7 @@ var rowSection = new Section('row');
       mats1.add(mat4);
       mats1.add(mat5);
       mats1.add(mat6);
-      mats1.add(mat7);
+
       mats1.add(mat8);
       mats1.add(mat9);
       mats1.add(mat10);
@@ -197,14 +195,16 @@ function btncprs(){
   mat.edit('Stone = ' + scr);
 }
 function btn1prs(){
-  scr1 ++;
+  scr1 += 2;
   mat1.edit('Sticks = ' + scr1);
 }
 function btn2prs(){
-  if (scr == 30 && scr1 == 20 && button2.down()){
+  if (scr >= 30 && scr1 >= 20 && btn2prs){
     scr2 ++;
     scr -= 30;
     scr1 -=20;
+    mat.edit('Stone = ' + scr);
+    mat1.edit('Sticks = ' + scr1);
   }
   if (scr2 == 1){
     buttona.remove();
@@ -214,25 +214,30 @@ function btn2prs(){
     text3.show();
     mat3.show();
     mat2.remove();
+    button3.show();
   }
 }
 function btn3prs(){
-  if (scr == 100 && button3.down()){
+  if (scr >= 100 && btn3prs){
     scr3 ++;
     scr -= 100;
+    mat.edit('Stone = ' + scr);
   }
   if (scr3 == 1){
     text4.show();
     mat4.show();
     mat3.remove();
     button3.remove();
+    button4.show();
   }
 }
 function btn4prs(){
-  if (scr == 60 && scr1 == 40 && button4.down()){
+  if (scr >= 60 && scr1 >= 40 && btn4prs){
     scr4 ++;
     scr -= 60;
     scr1 -= 40;
+    mat.edit('Stone = ' + scr);
+    mat1.edit('Sticks = ' + scr1);
   }
   if (scr4 == 1){
     text5.show();
@@ -246,22 +251,29 @@ function btn4prs(){
 }
 function btn5aprs(){
   scr5 += 4;
+  text5.show();
+  text6.show();
+  text7.show();
   mat5.edit('Wood = ' + scr5);
+  button6.show();
+  mat6.show();
 }
 function btn5bprs(){
   scr5 += 8;
   mat5.edit('Wood = ' + scr5);
 }
 function btn6prs(){
-  if (scr == 60 && scr5 == 50 && button6.down()){
+  if (scr >= 60 && scr5 >= 50 && btn6prs){
     scr6 ++;
     scr -= 60;
     scr5 -= 50;
+    mat.edit('Stone = ' + scr);
+    mat5.edit('Wood = ' + scr5);
   }
   if (scr6 == 1){
     text8.show();
     text9.show();
-    mat7.show();
+
     mat8.show();
     mat6.remove();
     mat9.show();
@@ -269,29 +281,30 @@ function btn6prs(){
     mat11.show();
     text10.show();
     button8a.show();
+    button6.remove();
+    button9.show();
+    button10.show();
+    button11.show();
+    button12.show();
+    mat12.show();
   }
 }
-function btn7aprs(){
-  scr7 ++;
-  mat7.edit('Clay = ' + scr7);
-}
-function btn7bprs(){
-  scr7 += 2;
-  mat7.edit('Clay = ' + scr7);
-}
 function btn8aprs(){
-  scr8 ++;
+  scr8 += 4;
   mat8.edit('Iron = ' + scr8);
+  
 }
 function btn8bprs(){
-  scr8 += 4;
+  scr8 += 10;
   mat8.edit('Iron = ' + scr8);
 }
 function btn9prs(){
-  if (scr8 == 200 && scr5 == 100 && button9.down()){
+  if (scr8 >= 200 && scr5 >= 100 && btn9prs){
     scr9 ++;
     scr8 -= 200;
     scr5 -= 100;
+    mat5.edit('Wood = ' + scr5);
+    mat8.edit('Iron = ' + scr8);
   }
   if (scr9 == 1){
     buttonb.remove();
@@ -299,36 +312,44 @@ function btn9prs(){
     button8a.remove();
     button8b.show();
     mat9.remove();
+    button9.remove();
   }
 }
 function btn10prs(){
-  if (scr8 == 200 && scr5 == 100 && button10.down()){
+  if (scr8 >= 200 && scr5 >= 100 && btn10prs){
     scr10 ++;
     scr8 -= 200;
     scr5 -= 100;
+    mat5.edit('Wood = ' + scr5);
+    mat8.edit('Iron = ' + scr8);
   }
   if (scr10 == 1){
     mat10.remove();
     button5b.show();
     button5a.remove();
+    button10.remove();
   }
 }
 function btn11prs(){
-  if (scr8 == 200 && scr5 == 100 && button11.down()){
+  if (scr8 >= 200 && scr5 >= 100 && btn11prs){
     scr11 ++;
     scr8 -= 200;
     scr5 -= 100;
+    mat5.edit('Wood = ' + scr5);
+    mat8.edit('Iron = ' + scr8);
   }
   if (scr10 == 1){
     mat11.remove();
     button7b.show();
     button7a.remove();
+    button11.remove();
   }
 }
 function btn12prs(){
-  if (scr8 == 1000 && button12.down()){
+  if (scr8 >= 1000 && btn12prs){
     scr12 ++;
     scr8 -= 1000;
+    mat8.edit('Iron = ' + scr8);
   }
   if (scr12 == 1){
     mat13.show();
@@ -342,13 +363,14 @@ function btn12prs(){
   }
 }
 function btn13prs(){
-  scr13 += 4;
+  scr13 += 10;
+  mat13.edit('Plastic' + scr13);
 }
 function btn14prs(){
-  if (scr8 == 10000 && scr13 == 10000 && button14.down()){
+  if (scr8 >= 2000 && scr13 >= 2000 && btn14prs){
     scr14 ++;
-    scr8 -= 10000;
-    scr13 -= 10000;
+    scr8 -= 2000;
+    scr13 -= 2000;
   }
   if (scr14 == 1){
     beginning.remove();
@@ -368,18 +390,19 @@ function btn14prs(){
     buttonc.remove();
     button1.remove();
     button5b.remove();
-    button7b.remove();
+
     button8b.remove();
     button13.remove();
     button14.remove();
+    button11.remove();
     mat.remove();
     mat1.remove();
     mat5.remove();
-    mat7.remove();
+
     mat8.remove();
     mat13.remove();
     mat14.remove();
-    End.show();
-    End2.show();
+    end.show();
+    end2.show();
   }
 }
