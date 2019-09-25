@@ -14,22 +14,6 @@ var scr12 = 0;
 var scr13 = 0;
 var scr14 = 0;
 
-<<<<<<< HEAD
-
-=======
-var title = new Title('Welcome to the Game'); // Create a title element
-var button = new Button('hello', btnPress);   // Create a button element
-var hidden = new Button('Boo!');
-//hidden.hide();
-var scr = new Text(score);                    // Create a text element
-//changes
-setInterval(btnPress, 1000);   // Set up a loop
->>>>>>> upstream/master
-
-
-
-
-
 var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
 var text = new Text('Get some stone to start your journey');
 let text1 = new Text('Great! Now you should grab some sticks to make a stone pickaxe');
@@ -213,7 +197,7 @@ function btn1prs(){
   mat1.edit('Sticks = ' + scr1);
 }
 function btn2prs(){
-  if (scr == 30 && scr1 == 20 && button2.down();){
+  if (scr == 30 && scr1 == 20 && button2.down()){
     scr2 ++;
     scr -= 30;
     scr1 -=20;
@@ -222,15 +206,14 @@ function btn2prs(){
     buttona.remove();
     buttonb.show();
     button2.remove();
-
     text2.show();
     text3.show();
     mat3.show();
-    mat2.hide();
+    mat2.remove();
   }
 }
 function btn3prs(){
-  if (scr == 100 && button3.down();){
+  if (scr == 100 && button3.down()){
     scr3 ++;
     scr -= 100;
   }
@@ -242,7 +225,7 @@ function btn3prs(){
   }
 }
 function btn4prs(){
-  if (scr == 60 && scr1 == 40 && button4.down();){
+  if (scr == 60 && scr1 == 40 && button4.down()){
     scr4 ++;
     scr -= 60;
     scr1 -= 40;
@@ -266,10 +249,22 @@ function btn5bprs(){
   mat5.edit('Wood = ' + scr5);
 }
 function btn6prs(){
-  if (scr == 60 && scr5 == 50 && button6.down();){
+  if (scr == 60 && scr5 == 50 && button6.down()){
     scr6 ++;
     scr -= 60;
     scr5 -= 50;
+  }
+  if (scr6 == 1){
+    text8.show();
+    text9.show();
+    mat7.show();
+    mat8.show();
+    mat6.remove();
+    mat9.show();
+    mat10.show();
+    mat11.show();
+    text10.show();
+    button8a.show();
   }
 }
 function btn7aprs(){
@@ -289,26 +284,96 @@ function btn8bprs(){
   mat8.edit('Iron = ' + scr8);
 }
 function btn9prs(){
-  scr9 ++;
-  mat9.hide();
+  if (scr8 == 200 && scr5 == 100 && button9.down()){
+    scr9 ++;
+    scr8 -= 200;
+    scr5 -= 100;
+  }
+  if (scr9 == 1){
+    buttonb.remove();
+    buttonc.show();
+    button8a.remove();
+    button8b.show();
+    mat9.remove();
+  }
 }
 function btn10prs(){
-  scr10 ++;
-  mat10.hide();
+  if (scr8 == 200 && scr5 == 100 && button10.down()){
+    scr10 ++;
+    scr8 -= 200;
+    scr5 -= 100;
+  }
+  if (scr10 == 1){
+    mat10.remove();
+    button5b.show();
+    button5a.remove();
+  }
 }
 function btn11prs(){
-  scr11 ++;
-  mat11.hide();
+  if (scr8 == 200 && scr5 == 100 && button11.down()){
+    scr11 ++;
+    scr8 -= 200;
+    scr5 -= 100;
+  }
+  if (scr10 == 1){
+    mat11.remove();
+    button7b.show();
+    button7a.remove();
+  }
 }
 function btn12prs(){
-  scr12 ++;
-  mat11.hide();
+  if (scr8 == 1000 && button12.down()){
+    scr12 ++;
+    scr8 -= 1000;
+  }
+  if (scr12 == 1){
+    mat13.show();
+    mat12.remove();
+    button12.remove();
+    button13.show();
+    text11.show();
+    text12.show();
+    button14.show();
+    mat14.show();
+  }
 }
 function btn13prs(){
-  scr13 ++;
-  mat11.hide();
+  scr13 += 4;
 }
 function btn14prs(){
-  scr14 ++;
-  mat11.hide();
+  if (scr8 == 10000 && scr13 == 10000 && button14.down()){
+    scr14 ++;
+    scr8 -= 10000;
+    scr13 -= 10000;
+  }
+  if (scr14 == 1){
+    beginning.remove();
+    text.remove();
+    text1.remove();
+    text2.remove();
+    text3.remove();
+    text4.remove();
+    text5.remove();
+    text6.remove();
+    text7.remove();
+    text8.remove();
+    text9.remove();
+    text10.remove();
+    text11.remove();
+    text12.remove();
+    buttonc.remove();
+    button1.remove();
+    button5b.remove();
+    button7b.remove();
+    button8b.remove();
+    button13.remove();
+    button14.remove();
+    mat.remove();
+    mat1.remove();
+    mat5.remove();
+    mat7.remove();
+    mat8.remove();
+    mat13.remove();
+    mat14.remove();
+  }
 }
