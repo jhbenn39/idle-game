@@ -205,13 +205,14 @@ function btn1prs(){
 function btn2prs(){
   if (scr == 30 && scr1 == 20 && button2.down();){
     scr2 ++;
+    scr -= 30;
+    scr1 -=20;
   }
   if (scr2 == 1){
     buttona.remove();
     buttonb.show();
     button2.remove();
-    scr -= 30;
-    scr1 -=20;
+
     text2.show();
     text3.show();
     mat3.show();
@@ -221,18 +222,20 @@ function btn2prs(){
 function btn3prs(){
   if (scr == 100 && button3.down();){
     scr3 ++;
+    scr -= 100;
   }
   if (scr3 == 1){
     text4.show();
     mat4.show();
     mat3.remove();
     button3.remove();
-    scr -= 100;
   }
 }
 function btn4prs(){
   if (scr == 60 && scr1 == 40 && button4.down();){
     scr4 ++;
+    scr -= 60;
+    scr1 -= 40;
   }
   if (scr4 == 1){
     text5.show();
@@ -245,16 +248,18 @@ function btn4prs(){
   }
 }
 function btn5aprs(){
-  scr5 ++4;
+  scr5 += 4;
   mat5.edit('Wood = ' + scr5);
 }
 function btn5bprs(){
-  scr5 =+ 8;
+  scr5 += 8;
   mat5.edit('Wood = ' + scr5);
 }
 function btn6prs(){
-  if (scr == 60 && scr == 50 && button6.down();){
+  if (scr == 60 && scr5 == 50 && button6.down();){
     scr6 ++;
+    scr -= 60;
+    scr5 -= 50;
   }
 }
 function btn7aprs(){
