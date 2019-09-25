@@ -14,7 +14,17 @@ var scr12 = 0;
 var scr13 = 0;
 var scr14 = 0;
 
+<<<<<<< HEAD
 
+=======
+var title = new Title('Welcome to the Game'); // Create a title element
+var button = new Button('hello', btnPress);   // Create a button element
+var hidden = new Button('Boo!');
+//hidden.hide();
+var scr = new Text(score);                    // Create a text element
+//changes
+setInterval(btnPress, 1000);   // Set up a loop
+>>>>>>> upstream/master
 
 
 
