@@ -28,6 +28,8 @@ let text9 = new Text('You can now make iron tools to get materials efficiently')
 let text10 = new Text('If you have enough iron, create an oil mine')
 let text11 = new Text('You can now make plastic')
 let text12 = new Text('If you have enough plastic and iron you can make a computer')
+var End = new Title('You Win!')
+var End2 = new Text('But you realized that it was all a dream haha you scrub')
 
 text1.hide();
 text2.hide();
@@ -41,6 +43,8 @@ text9.hide();
 text10.hide();
 text11.hide();
 text12.hide();
+End.hide();
+End2.show();
 
 var buttona = new Button('Stone',btnaprs);
 let buttonb = new Button('Stone',btnbprs);
@@ -375,5 +379,7 @@ function btn14prs(){
     mat8.remove();
     mat13.remove();
     mat14.remove();
+    End.show();
+    End2.show();
   }
 }
