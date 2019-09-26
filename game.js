@@ -13,6 +13,26 @@ var scr11 = 0;
 var scr12 = 0;
 var scr13 = 0;
 var scr14 = 0;
+var scr9a = 0;
+
+var stnb1;
+var stnc1;
+var stk1;
+var stnpkax1;
+var smltr1;
+var stnax1;
+var wda1;
+var wdb1;
+var stnshvl1;
+var irna1;
+var irnb1;
+var irnc1;
+var irnpkax1;
+var irnax1;
+var irnshvl1;
+var olmne1;
+var plstic1;
+var pc1;
 
 var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
 var text = new Text('Get some stone to start your journey');
@@ -46,44 +66,7 @@ text12.hide();
 end.hide();
 end2.hide();
 
-var buttona = new Button('Stone',stna);
-let buttonb = new Button('Stone',stnb);
-let buttonc = new Button('Stone',stnc);
-let button1 = new Button('Sticks',stk);
-let button2 = new Button('Stone Pickaxe',stnpkax);
-let button3 = new Button('Smelter',smltr);
-let button4 = new Button('Stone Axe',stnax);
-let button5a = new Button('Wood',wda);
-let button5b = new Button('Wood',wdb);
-let button6 = new Button('Stone Shovel',stnshvl);
-let button8a = new Button('Iron',irna);
-let button8b = new Button('Iron',irnb);
-let button8c = new Button('Iron',irnc);
-let button9 = new Button('Iron Pickaxe',irnpkax);
-let button10 = new Button('Iron Axe',irnax);
-let button11 = new Button('Iron Shovel',irnshvl);
-let button12 = new Button('Oil Mine',olmne)
-let button13 = new Button('Plastic',plstic)
-let button14 = new Button('Computer',pc)
-
-buttonb.hide();
-buttonc.hide();
-button1.hide();
-button2.hide();
-button3.hide();
-button4.hide();
-button5a.hide();
-button5b.hide();
-button6.hide();
-button8a.hide();
-button8b.hide();
-button8c.hide();
-button9.hide();
-button10.hide();
-button11.hide();
-button12.hide();
-button13.hide();
-button14.hide();
+var stna1 = new Button('Stone',stna);
 
 var mat = new Text('Stone = ' + scr);
 let mat1 = new Text('Sticks = ' + scr1);
@@ -107,7 +90,6 @@ mat3.hide();
 mat4.hide();
 mat5.hide();
 mat6.hide();
-
 mat8.hide();
 mat9.hide();
 mat10.hide();
@@ -138,25 +120,7 @@ var rowSection = new Section('row');
      txt1.add(text11);
      txt1.add(text12)
 
-     btns1.add(buttona);
-     btns1.add(buttonb);
-     btns1.add(buttonc);
-     btns1.add(button1);
-     btns1.add(button2);
-     btns1.add(button3);
-     btns1.add(button4);
-     btns1.add(button5a);
-     btns1.add(button5b);
-     btns1.add(button6);
-     btns1.add(button8a);
-     btns1.add(button8b);
-     btns1.add(button8c);
-     btns1.add(button9);
-     btns1.add(button10);
-     btns1.add(button11);
-     btns1.add(button12);
-     btns1.add(button13);
-     btns1.add(button14);
+     btns1.add(stna1);
 
      mats1.add(mat);
      mats1.add(mat1);
@@ -165,7 +129,6 @@ var rowSection = new Section('row');
      mats1.add(mat4);
      mats1.add(mat5);
      mats1.add(mat6);
-
      mats1.add(mat8);
      mats1.add(mat9);
      mats1.add(mat10);
@@ -174,13 +137,24 @@ var rowSection = new Section('row');
      mats1.add(mat13);
      mats1.add(mat14);
 
+if (scr9 == 1){
+ irna1.remove();
+ irnb1 = new Button('Iron',irnb);
+}
+if (scr9 == 1){
+ irnb1.remove();
+ irnc1 = new Button('Iron',irnc);
+}
+
 function stna(){
  scr += 2;
  mat.edit('Stone = ' + scr);
  if (scr == 10){
    text1.show();
-   button1.show();
-   button2.show();
+   stk1 = new Button('Sticks',stk);
+   btns1.add(stk1);
+   stnpkax1 = new Button('Stone Pickaxe',stnpkax);
+   btns1.add(stnpkax1);
    mat1.show();
    mat2.show();
  }
@@ -206,14 +180,16 @@ function stnpkax(){
    mat1.edit('Sticks = ' + scr1);
  }
  if (scr2 == 1){
-   buttona.remove();
-   buttonb.show();
-   button2.remove();
+   stna1.remove();
+   stnb1 = new Button('Stone',stnb);
+   btns1.add(stnb1);
+   stnpkax1.remove();
    text2.show();
    text3.show();
    mat3.show();
    mat2.remove();
-   button3.show();
+   smltr1 = new Button('Smelter',smltr);
+   btns1.add(smltr1);
  }
 }
 function smltr(){
@@ -226,8 +202,9 @@ function smltr(){
    text4.show();
    mat4.show();
    mat3.remove();
-   button3.remove();
-   button4.show();
+   smltr1.remove();
+   stnax1 = new Button('Stone Axe',stnax);
+   btns1.add(stnax1);
  }
 }
 function stnax(){
@@ -241,25 +218,22 @@ function stnax(){
  if (scr4 == 1){
    text5.show();
    text6.show();
-   button5a.show();
-   button4.remove();
+   wda1 = new Button('Wood',wda);
+   btns1.add(wda1);
+   stnax1.remove();
    mat4.remove()
    mat5.show();
    text7.show();
-   button1.remove();
+   stk1.remove();
    mat1.remove();
    mat6.show();
-   button6.show();
+   stnshvl1 = new Button('Stone Shovel',stnshvl);
+   btns1.add(stnshvl1);
  }
 }
 function wda(){
  scr5 += 4;
- text5.show();
- text6.show();
- text7.show();
  mat5.edit('Wood = ' + scr5);
- button6.show();
- mat6.show();
 }
 function wdb(){
  scr5 += 8;
@@ -276,22 +250,26 @@ function stnshvl(){
  if (scr6 == 1){
    text8.show();
    text9.show();
-
    mat8.show();
    mat6.remove();
    mat9.show();
    mat10.show();
    mat11.show();
    text10.show();
-   button8a.show();
-   button6.remove();
-   button9.show();
-   button10.show();
-   button11.show();
-   button12.show();
+   irna1 = new Button('Iron',irna);
+   btns1.add(irna1);
+   stnshvl1.remove();
+   irnpkax1 = new Button('Iron Pickaxe',irnpkax);
+   btns1.add(irnpkax1);
+   irnax1 = new Button('Iron Axe',irnax);
+   btns1.add(ironax1);
+   irnshvl1 = new Button('Iron Shovel',irnshvl);
+   btns1.add(irnshvl1);
+   olmne1 = new Button('Oil Mine',olmne);
+   btns1.add(olmne1);
    mat12.show();
  }
-}
+} 
 function irna(){
  scr8 += 2;
  mat8.edit('Iron = ' + scr8);
@@ -306,19 +284,19 @@ function irnc(){
 }
 function irnpkax(){
  if (scr8 >= 200 && scr5 >= 100 && irnpkax){
-   scr9 ++;
+   scr9 += 1;
+   scr9a ++;
    scr8 -= 200;
    scr5 -= 100;
    mat5.edit('Wood = ' + scr5);
    mat8.edit('Iron = ' + scr8);
  }
- if (scr9 == 1){
-   buttonb.remove();
-   buttonc.show();
-   button8a.remove();
-   button8b.show();
+ if (scr9a == 1){
+   stnb1.remove();
+   stnc1 = new Button('Stone',stnc);
+   btns1.add(stnc1);
    mat9.remove();
-   button9.remove();
+   irnpkax1.remove();
  }
 }
 function irnax(){
@@ -331,13 +309,15 @@ function irnax(){
  }
  if (scr10 == 1){
    mat10.remove();
-   button5b.show();
-   button5a.remove();
-   button10.remove();
+   wdb1 = new Button('Wood',wdb);
+   btns1.add(wdb1);
+   wda.remove();
+   irnax1.remove();
  }
 }
 function irnshvl(){
  if (scr8 >= 200 && scr5 >= 100 && irnshvl){
+   scr9 += 1;
    scr11 ++;
    scr8 -= 200;
    scr5 -= 100;
@@ -346,7 +326,7 @@ function irnshvl(){
  }
  if (scr11 >= 1){
    mat11.remove();
-   button11.remove();
+   irnshvl1.remove();
  }
 }
 function olmne(){
@@ -358,11 +338,13 @@ function olmne(){
  if (scr12 == 1){
    mat13.show();
    mat12.remove();
-   button12.remove();
-   button13.show();
+   olmne1.remove();
+   plstic1 = new Button('Plastic',plstic);
+   btns1.add(plstic1);
    text11.show();
    text12.show();
-   button14.show();
+   pc1 = new Button('Computer',pc);
+   btns1.add(pc1);
    mat14.show();
  }
 }
@@ -391,18 +373,18 @@ function pc(){
    text10.remove();
    text11.remove();
    text12.remove();
-   buttonc.remove();
-   button1.remove();
-   button5b.remove();
-
-   button8b.remove();
-   button13.remove();
-   button14.remove();
-   button11.remove();
+   stnc1.remove();
+   stk1.remove();
+   wdb1.remove();
+   irnpkax1.remove();
+   irnax1.remove();
+   irnshvl1.remove();
+   irnc1.remove();
+   plstic1.remove();
+   pc1.remove();
    mat.remove();
    mat1.remove();
    mat5.remove();
-
    mat8.remove();
    mat13.remove();
    mat14.remove();
@@ -410,4 +392,3 @@ function pc(){
    end2.show();
  }
 }
-
