@@ -176,7 +176,7 @@ var rowSection = new Section('row');
       mats1.add(mat14);
 
 function btnaprs(){
-  scr ++;
+  scr += 2;
   mat.edit('Stone = ' + scr);
   if (scr == 10){
     text1.show();
@@ -187,11 +187,11 @@ function btnaprs(){
   }
 }
 function btnbprs(){
-  scr += 2;
+  scr += 4;
   mat.edit('Stone = ' + scr);
 }
 function btncprs(){
-  scr += 4;
+  scr += 6;
   mat.edit('Stone = ' + scr);
 }
 function btn1prs(){
@@ -247,6 +247,10 @@ function btn4prs(){
     mat4.remove()
     mat5.show();
     text7.show();
+    button1.remove();
+    mat1.remove();
+    mat6.show();
+    button6.show();
   }
 }
 function btn5aprs(){
@@ -338,10 +342,8 @@ function btn11prs(){
     mat5.edit('Wood = ' + scr5);
     mat8.edit('Iron = ' + scr8);
   }
-  if (scr10 == 1){
+  if (scr11 >= 1){
     mat11.remove();
-    button7b.show();
-    button7a.remove();
     button11.remove();
   }
 }
