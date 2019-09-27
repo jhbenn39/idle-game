@@ -137,8 +137,6 @@ var rowSection = new Section('row');
      mats1.add(mat13);
      mats1.add(mat14);
 
-
-
 function stna(){
  scr += 2;
  mat.edit('Stone = ' + scr);
@@ -272,7 +270,7 @@ function irnb(){
  mat8.edit('Iron = ' + scr8);
 }
 function irnc(){
- scr8 += 100;
+ scr8 += 10;
  mat8.edit('Iron = ' + scr8);
 }
 function irnpkax(){
@@ -286,7 +284,6 @@ function irnpkax(){
  }
  if (scr9a == 1){
    stnb1.remove();
-
    mat9.remove();
    irnpkax1.remove();
  }
@@ -362,8 +359,8 @@ function olmne(){
  }
 }
 function plstic(){
- scr13 += 1000;
- mat13.edit('Plastic' + scr13);
+ scr13 += 10;
+ mat13.edit('Plastic = ' + scr13);
 }
 function pc(){
  if (scr8 >= 2000 && scr13 >= 2000 && plstic){
