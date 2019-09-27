@@ -387,7 +387,6 @@ function pc(){
    plstic1.remove();
    pc1.remove();
    mat.remove();
-  
    mat5.remove();
    mat8.remove();
    mat13.remove();
