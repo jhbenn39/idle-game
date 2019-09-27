@@ -33,6 +33,8 @@ var irnshvl1;
 var olmne1;
 var plstic1;
 var pc1;
+var end;
+var end2;
 
 var beginning = new Text('You are all alone in your little world with no civilization and you have to make a computer to get back to people');
 var text = new Text('Get some stone to start your journey');
@@ -48,8 +50,7 @@ let text9 = new Text('You can now make iron tools to get materials efficiently')
 let text10 = new Text('If you have enough iron, create an oil mine')
 let text11 = new Text('You can now make plastic');
 let text12 = new Text('If you have enough plastic and iron you can make a computer');
-let end = new Title('You Win!');
-let end2 = new Text('But you realized that it was all a dream haha you scrub');
+
 
 text1.hide();
 text2.hide();
@@ -63,8 +64,7 @@ text9.hide();
 text10.hide();
 text11.hide();
 text12.hide();
-end.hide();
-end2.hide();
+
 
 var stna1 = new Button('Stone',stna);
 
@@ -82,7 +82,7 @@ let mat10 = new Text('Axe Upgrade = 200 Iron + 100 Wood');
 let mat11 = new Text('Shovel Upgrade = 200 Iron + 100 Wood');
 let mat12 = new Text('Oil Mine = 1000 Iron');
 let mat13 = new Text('Plastic = '+ scr13);
-let mat14 = new Text('Computer = 10000 iron + 10000 Plastic');
+let mat14 = new Text('Computer = 2000 iron + 2000 Plastic');
 
 mat1.hide();
 mat2.hide();
@@ -137,14 +137,7 @@ var rowSection = new Section('row');
      mats1.add(mat13);
      mats1.add(mat14);
 
-if (scr9 == 1){
- irna1.remove();
- irnb1 = new Button('Iron',irnb);
-}
-if (scr9 == 1){
- irnb1.remove();
- irnc1 = new Button('Iron',irnc);
-}
+
 
 function stna(){
  scr += 2;
@@ -256,18 +249,18 @@ function stnshvl(){
    mat10.show();
    mat11.show();
    text10.show();
-   irna1 = new Button('Iron',irna);
-   btns1.add(irna1);
-   stnshvl1.remove();
-   irnpkax1 = new Button('Iron Pickaxe',irnpkax);
-   btns1.add(irnpkax1);
-   irnax1 = new Button('Iron Axe',irnax);
-   btns1.add(ironax1);
-   irnshvl1 = new Button('Iron Shovel',irnshvl);
-   btns1.add(irnshvl1);
-   olmne1 = new Button('Oil Mine',olmne);
-   btns1.add(olmne1);
    mat12.show();
+   stnshvl1.remove();
+   irna1 = new Button('Iron',irna);
+   irnpkax1 = new Button('Iron Pickaxe',irnpkax);
+   irnax1 = new Button('Iron Axe',irnax);
+   irnshvl1 = new Button('Iron Shovel',irnshvl);
+   olmne1 = new Button('Oil Mine',olmne);
+   btns1.add(irna1);
+   btns1.add(irnpkax1);
+   btns1.add(irnax1);
+   btns1.add(irnshvl1);
+   btns1.add(olmne1);
  }
 } 
 function irna(){
@@ -279,12 +272,12 @@ function irnb(){
  mat8.edit('Iron = ' + scr8);
 }
 function irnc(){
- scr8 += 10;
+ scr8 += 100;
  mat8.edit('Iron = ' + scr8);
 }
 function irnpkax(){
  if (scr8 >= 200 && scr5 >= 100 && irnpkax){
-   scr9 += 1;
+   scr9 ++;
    scr9a ++;
    scr8 -= 200;
    scr5 -= 100;
@@ -293,10 +286,19 @@ function irnpkax(){
  }
  if (scr9a == 1){
    stnb1.remove();
-   stnc1 = new Button('Stone',stnc);
-   btns1.add(stnc1);
+
    mat9.remove();
    irnpkax1.remove();
+ }
+ if (scr9 == 1){
+  irna1.remove();
+  irnb1 = new Button('Iron',irnb);
+  btns1.add(irnb1);
+ }
+ if (scr9 == 2){
+  irnb1.remove();
+  irnc1 = new Button('Iron',irnc);
+  btns1.add(irnc1);
  }
 }
 function irnax(){
@@ -311,7 +313,7 @@ function irnax(){
    mat10.remove();
    wdb1 = new Button('Wood',wdb);
    btns1.add(wdb1);
-   wda.remove();
+   wda1.remove();
    irnax1.remove();
  }
 }
@@ -328,6 +330,16 @@ function irnshvl(){
    mat11.remove();
    irnshvl1.remove();
  }
+ if (scr9 == 1){
+  irna1.remove();
+  irnb1 = new Button('Iron',irnb);
+  btns1.add(irnb1);
+ }
+ if (scr9 == 2){
+  irnb1.remove();
+  irnc1 = new Button('Iron',irnc);
+  btns1.add(irnc1);
+ }
 }
 function olmne(){
  if (scr8 >= 1000 && olmne){
@@ -341,6 +353,7 @@ function olmne(){
    olmne1.remove();
    plstic1 = new Button('Plastic',plstic);
    btns1.add(plstic1);
+   wdb1.remove();
    text11.show();
    text12.show();
    pc1 = new Button('Computer',pc);
@@ -349,7 +362,7 @@ function olmne(){
  }
 }
 function plstic(){
- scr13 += 10;
+ scr13 += 1000;
  mat13.edit('Plastic' + scr13);
 }
 function pc(){
@@ -373,22 +386,16 @@ function pc(){
    text10.remove();
    text11.remove();
    text12.remove();
-   stnc1.remove();
-   stk1.remove();
-   wdb1.remove();
-   irnpkax1.remove();
-   irnax1.remove();
-   irnshvl1.remove();
    irnc1.remove();
    plstic1.remove();
    pc1.remove();
    mat.remove();
-   mat1.remove();
+  
    mat5.remove();
    mat8.remove();
    mat13.remove();
    mat14.remove();
-   end.show();
-   end2.show();
+   end = new Title('You Win!');
+   end2 = new Text('But you realized that it was all a dream haha you scrub');
  }
 }
